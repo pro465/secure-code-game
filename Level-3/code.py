@@ -42,7 +42,7 @@ class TaxPayer:
         
         if not path:
             raise Exception("Error: Tax form is required for all users")
-        if path.startswith(base_dir):
+        if not path.startswith(base_dir):
             raise Exception("not allowed")
         
         with open(path, 'rb') as form:
